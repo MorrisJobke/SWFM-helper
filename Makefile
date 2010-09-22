@@ -1,4 +1,4 @@
-.PHONY: clean dev prod backend all test
+.PHONY: clean dev prod backend all test local_dev
 
 clean:
 	rm -fR build/php build/swfm-dev
@@ -32,3 +32,8 @@ test:
 	make clean
 	make backend
 	make dev
+	
+local_dev:
+	rm -R ../www/SWFM/
+	mkdir ../www/SWFM
+	cp -pR backend-php/src/* ../www/SWFM
