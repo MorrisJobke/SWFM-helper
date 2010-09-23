@@ -34,6 +34,6 @@ test:
 	make dev
 	
 local_dev:
-	rm -R ../www/SWFM/
+	rm -fR ../www/SWFM/
 	mkdir ../www/SWFM
 	cp -pR backend-php/src/* ../www/SWFM
