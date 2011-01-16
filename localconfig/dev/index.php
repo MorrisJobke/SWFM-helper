@@ -75,9 +75,9 @@
 				'esource_viewer', 
 				'archive_viewer'
 			],
-			'setting.load.auto': true,
-			'setting.load.enable': true,
-			'setting.save.enable': true,
+			'setting.load.auto': false,
+			'setting.load.enable': false,
+			'setting.save.enable': false,
 			'widget.treemenu.menu.context': [
 				'treemenu-newtab', 
 				'treemenu-reload'
