@@ -23,4 +23,14 @@
 	*/
 	SmartWFM_Registry::set('use_x_sendfile', False);
 
+	/* Use this file to store the settings.
+	   For multiuser support you have to modify the filename dynamically.
+	   E.g.: SmartWFM_Registry::set('setting_filename', '/home/'.$_SERVER['PHP_AUTH_USER'].'/.smartwfm.ini');
+	*/
+	$user = $_SERVER['REMOTE_USER'];
+	$path = '/afs/tu-chemnitz.de/home/urz/';
+	$path .= substr($user,0,1) . '/'. $user;
+	$path .= '/.smartwfm.ini';
+	SmartWFM_Registry::set('setting_filename', $path);
+
 ?>

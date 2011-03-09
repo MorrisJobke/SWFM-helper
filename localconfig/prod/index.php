@@ -19,7 +19,7 @@
 
 		var lang = getGETParam('lang');
 		if(lang == undefined) {
-			lang = 'en';
+			lang = 'de';
 		}
 
 		var config = {
@@ -27,7 +27,6 @@
 			'lang': lang,
 			'plugins' : [
 				'base_actions',
-				'example',
 				'afs_actions',
 				'extra',
 				'image_viewer',

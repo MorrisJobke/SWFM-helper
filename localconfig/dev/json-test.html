@@ -17,7 +17,7 @@
 		input = $('#inputjson').val();
 		$('#input').html(JSONtohtml($.evalJSON(input)));
 		$.post(
-			'../php/index.php',
+			'../php-dev/index.php',
 			{data:input},
 			function(data){
 				output(input,data); 

@@ -19,7 +19,7 @@
 
 		var lang = getGETParam('lang');
 		if(lang == undefined) {
-			lang = 'en';
+			lang = 'de';
 		}
 
 		var config = {
@@ -27,7 +27,6 @@
 			'lang': lang,
 			'plugins' : [
 				'base_actions',
-				'example',
 				'afs_actions',
 				'extra',
 				'image_viewer',
@@ -75,9 +74,9 @@
 				'esource_viewer', 
 				'archive_viewer'
 			],
-			'setting.load.auto': false,
-			'setting.load.enable': false,
-			'setting.save.enable': false,
+			'setting.load.auto': true,
+			'setting.load.enable': true,
+			'setting.save.enable': true,
 			'widget.treemenu.menu.context': [
 				'treemenu-newtab', 
 				'treemenu-reload'
@@ -119,9 +118,9 @@
 		} else {
 			config['home_path'] = "<?php
 				if( $_SERVER['REMOTE_USER'] == 'mjob' )
-					echo '/SWFM-Testordner';
+					echo '/SWFM-Testordner/Texte/Bilder';
 				else
-					echo '/urz/'.substr($_SERVER['REMOTE_USER'], 0, 1).'/'.$_SERVER['REMOTE_USER'];
+					echo '/home/urz/'.substr($_SERVER['REMOTE_USER'], 0, 1).'/'.$_SERVER['REMOTE_USER'];
 			?>";		
 		}
 
