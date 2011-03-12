@@ -1,4 +1,4 @@
-.PHONY: clean dev prod backend all test local_dev
+.PHONY: clean dev prod backend all test local_dev doc
 
 clean:
 	rm -fR build/php-dev build/swfm-dev
@@ -35,6 +35,7 @@ all:
 	make backend_dev
 	make dev
 	make prod
+	make doc
 	find build/ -name '*~'  -exec rm {} \;
 
 test:
@@ -51,4 +52,5 @@ local_dev:
 	cp localconfig/local/local.php ../www/SWFM/php/config/local.php
 	find ../www/SWFM/ -name '*~'  -exec rm {} \;
 	
-
+doc:
+	ant doc -f swfm/build.xml
