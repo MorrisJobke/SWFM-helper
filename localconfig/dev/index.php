@@ -40,29 +40,29 @@
 				'search'
 			],
 			'menu.main.file': [
-				'newtab', 
+				'newtab',
 				'new_folder'
 			],
 			'menu.main.edit': [
-				'copy', 
-				'move', 
-				'paste', 
-				'rename', 
-				'delete', 
+				'copy',
+				'move',
+				'paste',
+				'rename',
+				'delete',
 				'create_archive'
 			],
 			'menu.main.view': [
-				'iconview', 
+				'iconview',
 				'listview'
 			],
 			'menu.main.tools': [
-				'setting.show_hidden', 
-				'set_acl', 
-				'manage_groups', 
+				'setting.show_hidden',
+				'set_acl',
+				'manage_groups',
 				'search'
 			],
 			'menu.main.extras': [
-				'setting.save', 
+				'setting.save',
 				'setting.edit'
 			],
 			'plugin.setting.items': {
@@ -70,44 +70,45 @@
 				'setting.show_hidden': 'swfm.files.show_hidden'
 			},
 			'plugin.extra.open_with.menu': [
-				'image_viewer', 
-				'esource_viewer', 
+				'image_viewer',
+				'esource_viewer',
 				'archive_viewer'
 			],
 			'setting.load.auto': true,
 			'setting.load.enable': true,
 			'setting.save.enable': true,
 			'widget.treemenu.menu.context': [
-				'treemenu-newtab', 
+				'treemenu-newtab',
 				'treemenu-reload'
 			],
 			'widget.browser.menu.item_context': [
-				'extra.open_with', 
-				'copy', 
-				'move', 
-				'paste', 
-				'rename', 
-				'download', 
-				'create_archive', 
-				'set_acl', 
-				'|', 
+				'extra.open_with',
+				'copy',
+				'move',
+				'paste',
+				'rename',
+				'download',
+				'create_archive',
+				'set_acl',
+				'|',
 				'delete'
 			],
 			'widget.browser.menu.context': [
-				'new_folder', 
-				'copy', 
-				'move', 
-				'paste', 
-				'rename', 
-				'download', 
-				'upload', 
-				'set_acl' , 
-				'|', 
+				'new_folder',
+				'copy',
+				'move',
+				'paste',
+				'rename',
+				'download',
+				'upload',
+				'set_acl' ,
+				'|',
 				'delete'
 			],
 			'statusbar.left': [
 				'quota.progress'
 			],
+			'skip_folder_regexp': '^\/home\/urz(\/[^\/]+)?$'
 
 		};
 
@@ -117,11 +118,8 @@
 			config['home_path'] = home;
 		} else {
 			config['home_path'] = "<?php
-				if( $_SERVER['REMOTE_USER'] == 'mjob' )
-					echo '/SWFM-Testordner/Texte/Bilder';
-				else
-					echo '/home/urz/'.substr($_SERVER['REMOTE_USER'], 0, 1).'/'.$_SERVER['REMOTE_USER'];
-			?>";		
+				echo '/home/urz/'.substr($_SERVER['REMOTE_USER'], 0, 1).'/'.$_SERVER['REMOTE_USER'];
+			?>";
 		}
 
 		var extra_path = getGETParam('extra_path');

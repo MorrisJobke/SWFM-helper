@@ -1,7 +1,5 @@
 <?php
 	SmartWFM_Registry::set('basepath', '/afs/tu-chemnitz.de');
-	if( $_SERVER['REMOTE_USER'] == 'mjob' )
-		SmartWFM_Registry::set('basepath', '/afs/tu-chemnitz.de/home/urz/m/mjob');
 	SmartWFM_Registry::set('commands', array('base_actions', 'base_direct_commands', 'archive_actions', 'afs_special_actions', 'setting_actions', 'search_actions'));
 	SmartWFM_Registry::set('commands_path', 'commands');
 	/* How to detect the mime type
