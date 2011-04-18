@@ -1,0 +1,107 @@
+<!--<f?xml version="1.0" encoding="UTF-8"?>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>SWFM-Tests</title>
+	<script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery.json-2.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	<!--
+	$(document).ready(function()
+	{
+		$('#inputjson').val(filelist);
+		get();
+	});
+	function get()
+	{
+		input = $('#inputjson').val();
+		$('#input').html(JSONtohtml($.evalJSON(input)));
+		$.post(
+			'index.php',
+			{data:input},
+			function(data){
+				output(input,data);
+			}
+		);
+	}
+
+	function output(input,data)
+	{
+		if(typeof(data) == 'object')
+			$('#output').html(JSONtohtml(data));
+		else
+			$('#output').html(data);
+	}
+
+	function JSONtohtml(data)
+	{
+		html = '<table bgcolor="#000000" style="border-spacing:1px">';
+		$.each(data, function(key, value){
+			html += '<tr><td bgcolor="#ffffff"><span style="font-weight:bold; margin:10px">' + key + '</span></td><td bgcolor="#ffffff">';
+			if ( typeof(value) == 'object' )
+				html += JSONtohtml(value);
+			else
+				html += '<span style="margin:10px">' + value + '</span>';
+			html += '</td></tr>';
+		});
+		html += '</table>';
+		return html;
+	}
+
+	dirlist = '{"jsonrpc":"2.0","method":"dir.list","params":"/sdf/../lnb/"}';
+	filelist = '{"jsonrpc":"2.0","method":"file.list","params":{"path":"/","showHidden":false}}';
+	dircreate = '{"jsonrpc":"2.0","method":"dir.create","params":{"path":".","name":"toll"}}';
+	dirdelete = '{"jsonrpc":"2.0","method":"dir.delete","params":{"path":".","name":"toll"}}';
+	filecopy = '{"jsonrpc":"2.0","method":"file.copy","params":{"source":{"path":".","name":"muh"},"destination":{"path":".","name":"toll2"},"overwrite":false}}';
+	filedelete = '{"jsonrpc":"2.0","method":"file.delete","params":{"path":"/SWFM-Testordner","name":"NeuesArchiv.tar.bz2"}}';
+	filemove = '{"jsonrpc":"2.0","method":"file.move","params":{"source":{"path":".","name":"toll2"},"destination":{"path":".","name":"maeh"},"overwrite":false}}';
+	filerename = '{"jsonrpc":"2.0","method":"file.rename","params":{"path":".","name":"toll2","name_new":"muh","overwrite":false}}';
+	aclset = '{"jsonrpc":"2.0","method":"acl.set","params":{"path":"/","acl":{"urz:www-user":"rl","mjob":"rlidwka"}}}';
+	quotaget = '{"jsonrpc":"2.0","method":"quota.get","params":"/"}';
+	aclget = '{"jsonrpc":"2.0","method":"acl.get","params":"/"}';
+	groupsget = '{"jsonrpc":"2.0","method":"groups.get","params":{}}';
+	archivecreate = '{"jsonrpc":"2.0","method":"archive.create","params":{"path":"/SWFM-Testordner","archiveName":"NeuesArchiv.zip","archiveType":"zip","fullPath":false,"files":["Endlosgeschichte.pdf","Texte"]}}';
+	archivelist = '{"jsonrpc":"2.0","method":"archive.list","params":"/SWFM-Testordner/NeuesArchiv.zip"}';
+	archiveextract = '{"jsonrpc":"2.0","method":"archive.extract","params":{"path":"/SWFM-Testordner/a","archive":"/SWFM-Testordner/NeuesArchiv.zip","files":["./Endlosgeschichte.pdf"]}}';
+	archiveextract2 = '{"jsonrpc":"2.0","method":"archive.extract","params":{"path":"/SWFM-Testordner/a","archive":"/SWFM-Testordner/asdasd.zip","files":["./afs"]}}';
+	archivecreate2 = '{"jsonrpc":"2.0","method":"archive.create","params":{"path":"/SWFM-Testordner","archiveName":"NeuesArchiv.tar.bz2","archiveType":"tarbz2","fullPath":false,"files":["Endlosgeschichte.pdf","Texte"]}}';
+	archivecreate3 = '{"jsonrpc":"2.0","method":"archive.create","params":{"path":"/SWFM-Testordner","archiveName":"NeuesArchiv.tar.gz","archiveType":"targz","fullPath":false,"files":["Endlosgeschichte.pdf","Texte"]}}';
+	archivelist2 = '{"jsonrpc":"2.0","method":"archive.list","params":"/SWFM-Testordner/NeuesArchiv.tar.gz"}';
+	search1 = '{"jsonrpc":"2.0","method":"search","params":{"path":"/SWFM-Testordner/a","options":{"name":"a"}}}';
+
+	//-->
+	</script>
+</head>
+<body>
+Beispiele:
+<input type="button" onclick="$('#inputjson').val(dirlist);get();return false;" value="dir.list" />
+<input type="button" onclick="$('#inputjson').val(filelist);get();return false;" value="file.list" />
+<input type="button" onclick="$('#inputjson').val(dircreate);get();return false;" value="dir.create" />
+<input type="button" onclick="$('#inputjson').val(dirdelete);get();return false;" value="dir.delete" />
+<input type="button" onclick="$('#inputjson').val(filecopy);get();return false;" value="file.copy" />
+<input type="button" onclick="$('#inputjson').val(filedelete);get();return false;" value="file.delete" />
+<input type="button" onclick="$('#inputjson').val(filemove);get();return false;" value="file.move" />
+<input type="button" onclick="$('#inputjson').val(filerename);get();return false;" value="file.rename" />
+<input type="button" onclick="$('#inputjson').val(aclset);get();return false;" value="acl.set" />
+<input type="button" onclick="$('#inputjson').val(aclget);get();return false;" value="acl.get" />
+<input type="button" onclick="$('#inputjson').val(quotaget);get();return false;" value="quota.get" />
+<input type="button" onclick="$('#inputjson').val(groupsget);get();return false;" value="groups.get" />
+<input type="button" onclick="$('#inputjson').val(archivecreate);get();return false;" value="archive.create" />
+<input type="button" onclick="$('#inputjson').val(archivelist);get();return false;" value="archive.list" />
+<input type="button" onclick="$('#inputjson').val(archiveextract);get();return false;" value="archive.extract" />
+<input type="button" onclick="$('#inputjson').val(archiveextract2);get();return false;" value="archive.extract2" />
+<input type="button" onclick="$('#inputjson').val(archivecreate2);get();return false;" value="archive.create2" />
+<input type="button" onclick="$('#inputjson').val(archivecreate3);get();return false;" value="archive.create3" />
+<input type="button" onclick="$('#inputjson').val(archivelist2);get();return false;" value="archive.list2" />
+<input type="button" onclick="$('#inputjson').val(search1);get();return false;" value="search1" />
+<form onsubmit="get();return false;">
+<input type="submit" onsubmit="get();return false;" value="submit" />
+<input id="inputjson" type="text" size="200" value='' />
+</form>
+<br />
+Input:
+<div id="input"></div>
+Output:
+<div id="output"></div>
+</body>
+</html>
