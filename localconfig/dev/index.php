@@ -3,6 +3,7 @@
 	<title>Smart Web File Manager - Demo</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<script type="text/javascript" src="swfm/swfm-core.js"></script>
+	<link rel="shortcut icon" type="image/png" href="swfm/themes/default/favicon.png" />
 </head>
 <body>
 	<script type="text/javascript">
@@ -108,7 +109,8 @@
 			'statusbar.left': [
 				'quota.progress'
 			],
-			'skip_folder_regexp': '^\/home\/urz(\/[^\/]+)?$'
+			'skip_folder_regexp': '^\/home\/urz(\/[^\/]+)?$',
+			'widget.treemenu.root_name': '/afs/tu-chemnitz.de'
 
 		};
 
