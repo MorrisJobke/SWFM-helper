@@ -1,3 +1,0 @@
-backend-php/
-swfm/
-localconfig/
