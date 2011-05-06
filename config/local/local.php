@@ -20,5 +20,6 @@
 	     - XSendFileAllowAbove On
 	*/
 	SmartWFM_Registry::set('use_x_sendfile', False);
+	SmartWFM_Registry::set('setting_filename', '/var/www/test/swfm.ini');
 
 ?>

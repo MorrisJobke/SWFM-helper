@@ -581,3 +581,4 @@
 ./website/users/compatibility.rst
 ./website/users/firststeps.rst
 ./website/users/index.rst
+config/local/index.php

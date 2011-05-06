@@ -54,5 +54,12 @@ local_dev:
 	cp -pR config/dev/js ../www/SWFM/php/js
 	find ../www/SWFM/ -name '*~'  -exec rm {} \;
 
+local_full_dev:
+	make test
+	cp config/local/local.php build/php-dev/config/local.php
+	cp config/local/index.php build/swfm-dev/index.php
+	cp config/local/json-test.html build/swfm-dev/json-test.html
+
+
 doc:
 	ant doc -f swfm/build.xml
