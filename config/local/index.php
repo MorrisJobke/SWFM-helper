@@ -32,7 +32,8 @@
 				'image_viewer',
 				'setting',
 				'esource_viewer',
-				'archives'
+				'archives',
+				'feedback'
 			],
 			'widgets' : [
 				'treemenu',
@@ -101,7 +102,8 @@
 				'|',
 				'delete'
 			],
-			'statusbar.left': [
+			'statusbar.right': [
+				'feedback'
 			],
 			'widget.treemenu.root_name': '/var/www/test'
 

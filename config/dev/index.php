@@ -33,7 +33,8 @@
 				'image_viewer',
 				'setting',
 				'esource_viewer',
-				'archives'
+				'archives',
+				'feedback'
 			],
 			'widgets' : [
 				'treemenu',
@@ -108,6 +109,9 @@
 			],
 			'statusbar.left': [
 				'quota.progress'
+			],
+			'statusbar.right': [
+				'feedback'
 			],
 			'skip_folder_regexp': '^\/home\/urz(\/[^\/]+)?$',
 			'widget.treemenu.root_name': '/afs/tu-chemnitz.de'

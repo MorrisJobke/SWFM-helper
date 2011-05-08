@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(filelist);
+		$('#inputjson').val(feedback);
 		get();
 	});
 	function get()
@@ -68,6 +68,7 @@
 	archivecreate3 = '{"jsonrpc":"2.0","method":"archive.create","params":{"path":"/SWFM-Testordner","archiveName":"NeuesArchiv.tar.gz","archiveType":"targz","fullPath":false,"files":["Endlosgeschichte.pdf","Texte"]}}';
 	archivelist2 = '{"jsonrpc":"2.0","method":"archive.list","params":"/SWFM-Testordner/NeuesArchiv.tar.gz"}';
 	search1 = '{"jsonrpc":"2.0","method":"search","params":{"path":"/SWFM-Testordner/a","options":{"name":"a"}}}';
+	feedback = '{"jsonrpc":"2.0","method":"feedback.send","params":{"text":"ghjkgjhk\n\nklöj","subject":"hjgk"}}';
 
 	//-->
 	</script>
@@ -94,6 +95,7 @@ Beispiele:
 <input type="button" onclick="$('#inputjson').val(archivecreate3);get();return false;" value="archive.create3" />
 <input type="button" onclick="$('#inputjson').val(archivelist2);get();return false;" value="archive.list2" />
 <input type="button" onclick="$('#inputjson').val(search1);get();return false;" value="search1" />
+<input type="button" onclick="$('#inputjson').val(feedback);get();return false;" value="feedback" />
 <form onsubmit="get();return false;">
 <input type="submit" onsubmit="get();return false;" value="submit" />
 <input id="inputjson" type="text" size="200" value='' />
