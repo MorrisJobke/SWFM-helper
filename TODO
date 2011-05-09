@@ -1,0 +1,19 @@
+
+
+Dieselbe Funktion mit "Umbenennen" ist OK und ist sogar zum Verschieben in der Lage :)
+
+Unterschied Verschieben - Umbenennen
+
+
+foobar.tgz:     archive viewer wird nicht angeboten.
+foobar.tar.bz2: archive viewer _und_ source viewer werden angeboten,
+Archivinhalt wird angezeigt, aber Auspacken führt auf Fehler. (Couldn't
+open & extract)
+Bei https://login.tu-chemnitz.de/swfm-test/swfm ist OK.
+foobar.tar.gz:  OK
+foobar.zip: Quelltext anzeigen; bei TUC:swfm-test/swfm ist OK. (Mal
+wieder mime type, fürchte ich)
+foobar.zip kann nicht erzeugt werden, wenn man sich in "$HOME" befindet,
+es geht nur tiefer im Baum.
+foobar.tar:     Tests stehen noch aus.
+
