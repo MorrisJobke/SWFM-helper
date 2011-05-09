@@ -60,6 +60,11 @@ local_full_dev:
 	cp config/local/index.php build/swfm-dev/index.php
 	cp config/local/json-test.html build/swfm-dev/json-test.html
 
+local_full:
+	make local_full_dev
+	make prod
+	cp config/local/index.php build/swfm/index.php
+
 
 doc:
 	ant doc -f swfm/build.xml

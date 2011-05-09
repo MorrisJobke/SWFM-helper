@@ -33,7 +33,8 @@
 				'image_viewer',
 				'setting',
 				'esource_viewer',
-				'archives'
+				'archives',
+				'feedback'
 			],
 			'widgets' : [
 				'treemenu',
