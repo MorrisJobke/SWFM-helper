@@ -18,7 +18,7 @@ backend_dev:
 
 dev:
 	mkdir -p build/swfm-dev
-	ant build_dev -f swfm/build.xml && cp -R swfm/build/* build/swfm-dev
+	ant build_dev -logger org.apache.tools.ant.listener.AnsiColorLogger -f swfm/build.xml && cp -R swfm/build/* build/swfm-dev
 	cp config/dev/index.php build/swfm-dev/index.php
 	cp config/dev/json-test.html build/swfm-dev/json-test.html
 	cp -pR config/dev/js build/swfm-dev/js
@@ -26,7 +26,7 @@ dev:
 prod:
 	rm -fR build/swfm
 	mkdir build/swfm
-	ant clean -f swfm/build.xml && ant build -f swfm/build.xml && cp -R swfm/build/* build/swfm && ant clean -f swfm/build.xml
+	ant clean -logger org.apache.tools.ant.listener.AnsiColorLogger -f swfm/build.xml && ant build -logger org.apache.tools.ant.listener.AnsiColorLogger -f swfm/build.xml && cp -R swfm/build/* build/swfm && ant clean -logger org.apache.tools.ant.listener.AnsiColorLogger -f swfm/build.xml
 	cp config/prod/index.php build/swfm/index.php
 
 all:
@@ -67,4 +67,4 @@ local_full:
 
 
 doc:
-	ant doc -f swfm/build.xml
+	ant doc -logger org.apache.tools.ant.listener.AnsiColorLogger -f swfm/build.xml
