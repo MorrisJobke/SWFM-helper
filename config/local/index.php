@@ -105,7 +105,8 @@
 			'statusbar.right': [
 				'feedback'
 			],
-			'widget.treemenu.root_name': '/var/www/test'
+			'widget.treemenu.root_name': '/var/www/test'/*,
+			'skip_folder_regexp': '^\/urz$',*/
 
 		};
 

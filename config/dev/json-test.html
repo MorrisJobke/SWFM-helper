@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(feedback);
+		$('#inputjson').val(filelist);
 		get();
 	});
 	function get()
@@ -40,8 +40,12 @@
 			html += '<tr><td bgcolor="#ffffff"><span style="font-weight:bold; margin:10px">' + key + '</span></td><td bgcolor="#ffffff">';
 			if ( typeof(value) == 'object' )
 				html += JSONtohtml(value);
-			else
-				html += '<span style="margin:10px">' + value + '</span>';
+			else {
+				if( value == null)
+					html += '<span style="margin:10px">NULL</span>';
+				else
+					html += '<span style="margin:10px">' + value + '</span>';
+			}
 			html += '</td></tr>';
 		});
 		html += '</table>';
