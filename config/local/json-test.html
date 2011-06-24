@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(filelist);
+		$('#inputjson').val(dirlist);
 		get();
 	});
 	function get()
@@ -48,7 +48,7 @@
 		return html;
 	}
 
-	dirlist = '{"jsonrpc":"2.0","method":"dir.list","params":"/sdf/../lnb/"}';
+	dirlist = '{"jsonrpc":"2.0","method":"dir.list","params":{"path":"/","showHidden":false}}';
 	filelist = '{"jsonrpc":"2.0","method":"file.list","params":{"path":"/","showHidden":false}}';
 	dircreate = '{"jsonrpc":"2.0","method":"dir.create","params":{"path":".","name":"toll"}}';
 	dirdelete = '{"jsonrpc":"2.0","method":"dir.delete","params":{"path":".","name":"toll"}}';
