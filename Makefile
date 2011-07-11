@@ -60,6 +60,7 @@ local_full_dev:
 	cp config/local/index.php build/swfm-dev/index.php
 	cp config/local/json-test.html build/php-dev/json-test.html
 	cp -pR config/dev/js build/php-dev/js
+	echo "FERTIG!!!"
 
 local_full:
 	make local_full_dev
