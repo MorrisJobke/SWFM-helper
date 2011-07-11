@@ -17,3 +17,12 @@ foobar.zip kann nicht erzeugt werden, wenn man sich in "$HOME" befindet,
 es geht nur tiefer im Baum.
 foobar.tar:     Tests stehen noch aus.
 
+
+
+website:
+	base direct actions
+	new file actions
+	setting.load
+	error
+	conventions
+	website/documentations
