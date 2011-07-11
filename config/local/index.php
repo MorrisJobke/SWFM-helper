@@ -105,8 +105,8 @@
 			'statusbar.right': [
 				'feedback'
 			],
-			'widget.treemenu.root_name': '/var/www/test'/*,
-			'skip_folder_regexp': '^\/urz$',*/
+			'widget.treemenu.root_name': '/var/www/test',
+			'skip_folder_regexp': '^\/urz$'
 
 		};
 
@@ -115,7 +115,7 @@
 		if(home != undefined) {
 			config['home_path'] = home;
 		} else {
-			config['home_path'] = "/";
+			config['home_path'] = "/urz/a";
 		}
 
 		var extra_path = getGETParam('extra_path');

@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(dirlist);
+		$('#inputjson').val(setting1);
 		get();
 	});
 	function get()
@@ -68,6 +68,7 @@
 	archivecreate3 = '{"jsonrpc":"2.0","method":"archive.create","params":{"path":"/SWFM-Testordner","archiveName":"NeuesArchiv.tar.gz","archiveType":"targz","fullPath":false,"files":["Endlosgeschichte.pdf","Texte"]}}';
 	archivelist2 = '{"jsonrpc":"2.0","method":"archive.list","params":"/SWFM-Testordner/NeuesArchiv.tar.gz"}';
 	search1 = '{"jsonrpc":"2.0","method":"search","params":{"path":"/SWFM-Testordner/a","options":{"name":"a"}}}';
+	setting1 = '{"jsonrpc":"2.0","method":"setting.load","params":{"swfm.language":"string-select","swfm.files.show_hidden":"bool","swfm.controls.action":"select","swfm.controls.context_menu":"select","swfm.controls.select":"select","swfm.controls.dblclick.delay":"integer"}}';
 
 	//-->
 	</script>
