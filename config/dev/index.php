@@ -34,7 +34,8 @@
 				'setting',
 				'esource_viewer',
 				'archives',
-				'feedback'
+				'feedback',
+				'file_info'
 			],
 			'widgets' : [
 				'treemenu',
@@ -51,7 +52,8 @@
 				'paste',
 				'rename',
 				'delete',
-				'create_archive'
+				'create_archive',
+				//'file_info'
 			],
 			'menu.main.view': [
 				'iconview',
@@ -92,6 +94,7 @@
 				'download',
 				'create_archive',
 				'set_acl',
+				'file_info',
 				'|',
 				'delete'
 			],
@@ -103,9 +106,7 @@
 				'rename',
 				'download',
 				'upload',
-				'set_acl' ,
-				'|',
-				'delete'
+				'set_acl'
 			],
 			'statusbar.left': [
 				'quota.progress'
