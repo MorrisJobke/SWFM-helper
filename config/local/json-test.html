@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(setting1);
+		$('#inputjson').val(fileinfo1);
 		get();
 	});
 	function get()
@@ -69,7 +69,7 @@
 	archivelist2 = '{"jsonrpc":"2.0","method":"archive.list","params":"/SWFM-Testordner/NeuesArchiv.tar.gz"}';
 	search1 = '{"jsonrpc":"2.0","method":"search","params":{"path":"/SWFM-Testordner/a","options":{"name":"a"}}}';
 	setting1 = '{"jsonrpc":"2.0","method":"setting.load","params":{"swfm.language":"string-select","swfm.files.show_hidden":"bool","swfm.controls.action":"select","swfm.controls.context_menu":"select","swfm.controls.select":"select","swfm.controls.dblclick.delay":"integer"}}';
-
+	fileinfo1 = '{"jsonrpc":"2.0","method":"file.info","params":"/huhu/file2.txt"}';
 	//-->
 	</script>
 </head>
@@ -95,6 +95,8 @@ Beispiele:
 <input type="button" onclick="$('#inputjson').val(archivecreate3);get();return false;" value="archive.create3" />
 <input type="button" onclick="$('#inputjson').val(archivelist2);get();return false;" value="archive.list2" />
 <input type="button" onclick="$('#inputjson').val(search1);get();return false;" value="search1" />
+<input type="button" onclick="$('#inputjson').val(setting1);get();return false;" value="setting1" />
+<input type="button" onclick="$('#inputjson').val(fileinfo1);get();return false;" value="fileinfo1" />
 <form onsubmit="get();return false;">
 <input type="submit" onsubmit="get();return false;" value="submit" />
 <input id="inputjson" type="text" size="200" value='' />

@@ -33,7 +33,8 @@
 				'setting',
 				'esource_viewer',
 				'archives',
-				'feedback'
+				'feedback',
+				'file_info'
 			],
 			'widgets' : [
 				'treemenu',
@@ -50,7 +51,8 @@
 				'paste',
 				'rename',
 				'delete',
-				'create_archive'
+				'create_archive',
+				'file_info'
 			],
 			'menu.main.view': [
 				'iconview',
@@ -88,6 +90,7 @@
 				'rename',
 				'download',
 				'create_archive',
+				'file_info',
 				'|',
 				'delete'
 			],
@@ -96,11 +99,8 @@
 				'copy',
 				'move',
 				'paste',
-				'rename',
 				'download',
-				'upload',
-				'|',
-				'delete'
+				'upload'
 			],
 			'statusbar.right': [
 				'feedback'
@@ -115,7 +115,7 @@
 		if(home != undefined) {
 			config['home_path'] = home;
 		} else {
-			config['home_path'] = "/urz/a";
+			config['home_path'] = "/huhu";
 		}
 
 		var extra_path = getGETParam('extra_path');
