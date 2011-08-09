@@ -115,7 +115,7 @@
 		if(home != undefined) {
 			config['home_path'] = home;
 		} else {
-			config['home_path'] = "/huhu";
+			config['home_path'] = "/urztest";
 		}
 
 		var extra_path = getGETParam('extra_path');
