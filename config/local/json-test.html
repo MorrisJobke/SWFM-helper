@@ -9,7 +9,7 @@
 	<!--
 	$(document).ready(function()
 	{
-		$('#inputjson').val(fileinfo1);
+		$('#inputjson').val(bookmarks_save);
 		get();
 	});
 	function get()
@@ -70,6 +70,8 @@
 	search1 = '{"jsonrpc":"2.0","method":"search","params":{"path":"/SWFM-Testordner/a","options":{"name":"a"}}}';
 	setting1 = '{"jsonrpc":"2.0","method":"setting.load","params":{"swfm.language":"string-select","swfm.files.show_hidden":"bool","swfm.controls.action":"select","swfm.controls.context_menu":"select","swfm.controls.select":"select","swfm.controls.dblclick.delay":"integer"}}';
 	fileinfo1 = '{"jsonrpc":"2.0","method":"file.info","params":"/huhu/file2.txt"}';
+	bookmarks = '{"jsonrpc":"2.0","method":"bookmarks.load","params":{}}';
+	bookmarks_save = '{"jsonrpc":"2.0","method":"bookmarks.save","params":[["huhu", "/sad"],["moin", "/urztest"]]}';
 	//-->
 	</script>
 </head>
@@ -97,6 +99,8 @@ Beispiele:
 <input type="button" onclick="$('#inputjson').val(search1);get();return false;" value="search1" />
 <input type="button" onclick="$('#inputjson').val(setting1);get();return false;" value="setting1" />
 <input type="button" onclick="$('#inputjson').val(fileinfo1);get();return false;" value="fileinfo1" />
+<input type="button" onclick="$('#inputjson').val(bookmarks);get();return false;" value="bookmarks" />
+<input type="button" onclick="$('#inputjson').val(bookmarks_save);get();return false;" value="bookmarks_save" />
 <form onsubmit="get();return false;">
 <input type="submit" onsubmit="get();return false;" value="submit" />
 <input id="inputjson" type="text" size="200" value='' />

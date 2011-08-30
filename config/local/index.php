@@ -39,7 +39,8 @@
 			'widgets' : [
 				'treemenu',
 				'browser',
-				'search'
+				'search',
+				'bookmarks'
 			],
 			'menu.main.file': [
 				'newtab',
@@ -60,7 +61,8 @@
 			],
 			'menu.main.tools': [
 				'setting.show_hidden',
-				'search'
+				'search',
+				'bookmarks'
 			],
 			'menu.main.extras': [
 				'setting.save',
