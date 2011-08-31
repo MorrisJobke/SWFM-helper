@@ -1,5 +1,8 @@
 .PHONY: clean dev prod backend all test local_dev doc
 
+install:
+	make local_full_dev
+
 clean:
 	rm -fR build/php-dev build/swfm-dev
 
