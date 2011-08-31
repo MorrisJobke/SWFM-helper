@@ -1,6 +1,10 @@
 <?php
 	SmartWFM_Registry::set('basepath', '/afs/tu-chemnitz.de');
-	SmartWFM_Registry::set('commands', array('base_actions', 'base_direct_commands', 'archive_actions', 'afs_special_actions', 'setting_actions', 'search_actions', 'feedback_actions', 'file_info_actions'));
+	SmartWFM_Registry::set('commands', array(
+		'base_actions', 'base_direct_commands', 'archive_actions', 
+		'afs_special_actions', 'setting_actions', 'search_actions', 
+		'feedback_actions', 'file_info_actions', 'bookmarks_actions'
+	));
 	SmartWFM_Registry::set('commands_path', 'commands');
 	/* How to detect the mime type
 	   Modes:
@@ -28,7 +32,8 @@
 	$user = $_SERVER['REMOTE_USER'];
 	$path = '/afs/tu-chemnitz.de/home/urz/';
 	$path .= substr($user,0,1) . '/'. $user;
-	$path .= '/.smartwfm.ini';
-	SmartWFM_Registry::set('setting_filename', $path);
+	SmartWFM_Registry::set('setting_filename', $path . '/.smartwfm.ini');
+	
+	SmartWFM_Registry::set('bookmarks_filename', $path . '/.smartwfm_bookmarks.ini');
 
 ?>
