@@ -3,8 +3,8 @@
 Maximized=1
 Geometry=1680x1026+0+24
 
-[File Loader]
-Files=file:///home/kabum/Projekte/SmartWFM/website/users/index.rst#1%%%file:///home/kabum/Projekte/SmartWFM/website/index.rst#1%%%file:///home/kabum/Projekte/SmartWFM/website/devel/backendapi/index.rst#1%%%file:///home/kabum/Projekte/SmartWFM/website/devel/index.rst#8
+[Project Manager]
+Shortcut=C file:///home/kabum/Projekte/SmartWFM/backend_dev backend_dev %%%C file:///home/kabum/Projekte/SmartWFM/local_full_dev local_full_dev %%%C file:///home/kabum/Projekte/SmartWFM/local_dev local_dev %%%C file:///home/kabum/Projekte/SmartWFM/doc doc %%%C file:///home/kabum/Projekte/SmartWFM/prod prod %%%C file:///home/kabum/Projekte/SmartWFM/clean clean %%%C file:///home/kabum/Projekte/SmartWFM/all all %%%C file:///home/kabum/Projekte/SmartWFM/backend backend %%%C file:///home/kabum/Projekte/SmartWFM/local_full local_full %%%C file:///home/kabum/Projekte/SmartWFM/dev dev %%%C file:///home/kabum/Projekte/SmartWFM/test test 
 
 [Document Manager]
 bookmarks=<?xml version="1.0" encoding="UTF-8"?>\n<bookmarks/>\n
@@ -14,9 +14,6 @@ Program arguments=local_full_dev%%%full_local_dev
 Program uri=file:///usr/bin/make%%%file:///home/kabum/Projekte/SmartWFM/make
 Run in terminal=2
 Working directories=file:///home/kabum/Projekte/SmartWFM
-
-[Project Manager]
-Shortcut=C file:///home/kabum/Projekte/SmartWFM/backend_dev backend_dev %%%C file:///home/kabum/Projekte/SmartWFM/local_full_dev local_full_dev %%%C file:///home/kabum/Projekte/SmartWFM/local_dev local_dev %%%C file:///home/kabum/Projekte/SmartWFM/doc doc %%%C file:///home/kabum/Projekte/SmartWFM/prod prod %%%C file:///home/kabum/Projekte/SmartWFM/clean clean %%%C file:///home/kabum/Projekte/SmartWFM/all all %%%C file:///home/kabum/Projekte/SmartWFM/backend backend %%%C file:///home/kabum/Projekte/SmartWFM/local_full local_full %%%C file:///home/kabum/Projekte/SmartWFM/dev dev %%%C file:///home/kabum/Projekte/SmartWFM/test test 
 
 [Build]
 Configuration list=1:Default:%%%1:Debug:Debug%%%1:Profiling:Profiling%%%1:Optimized:Optimized
