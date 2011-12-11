@@ -1,0 +1,513 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"C",
+				"Config"
+			],
+			[
+				"I",
+				"Icon"
+			],
+			[
+				"l",
+				"lib"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "swfm/swfm-extjs4/app/view/browser/Tab.js",
+			"settings":
+			{
+				"buffer_size": 911,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/view/browser/IconView.js",
+			"settings":
+			{
+				"buffer_size": 1081,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 164.0,
+		"selected_items":
+		[
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"syntax ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"git",
+				"Set Syntax: Git Graph"
+			],
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
+				"perl",
+				"Set Syntax: Perl"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"statu",
+				"Git: Status"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"git diff",
+				"Git: Diff Current File"
+			],
+			[
+				"git d",
+				"Git: Diff Current File"
+			],
+			[
+				"global",
+				"Preferences: Default Global Settings"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Tab.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Browser.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/Application.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/controller/Browser.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/IconView.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/store/Files.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/File.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/ux/DataView/DragSelector.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/src/dd/DragTracker.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/src/util/Region.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/src/util/Offset.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/I18n.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/config/Config.json",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/Viewport.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Config.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/SidePanel.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/treeMenu/TreeMenu.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/treeMenu/Folder.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/store/treeMenu/Folders.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data/folders.json",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/treeMenu/Folder",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/widgets/search/widget.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/rpc.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data/files.json",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/widgets/browser/widget.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/swfm-main.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/SidePanel",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data/files.json.old",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/browser.css",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Path.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Url.js",
+		"/home/kabum/swfm/classes/url.js",
+		"/home/kabum/swfm/classes/path.js",
+		"/home/kabum/swfm/themes/default/theme.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/config.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/config/Icons.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/icons.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/resource.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/url.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/themes/default/theme.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/tools/ext-doc/swfm.xml",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/docs/custom-tags.rb",
+		"/home/kabum/Projekte/SmartWFM/swfm/tools/ext-doc/template/swfm/template.xml",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data/icons.json",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/store/Icons.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/GridView.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/path.js",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/Default/Base File.sublime-settings",
+		"/home/kabum/Projekte/www/test/data-view.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/extjs/resources/css/ext-all.css",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/index.html",
+		"/home/kabum/Projekte/www/test/bootstrap.js",
+		"/home/kabum/Projekte/www/test/index.html",
+		"/home/kabum/Projekte/www/test/examples/view/get-images.php",
+		"/home/kabum/Projekte/www/test/examples/view/data-view.js",
+		"/home/kabum/Projekte/www/test/examples/view/data-view2.css",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/ext-4.0.7-gpl/ext-all-debug.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/ext-4.0.7-gpl/examples/view/data-view.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data-view.css",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/widgets/browser/locale/de.js",
+		"/home/kabum/Projekte/SmartWFM/backend-php/src/index.php",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/index.html",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/controller/Browser.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/lib/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/lib/Path.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/Application.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/tools/ext-doc/README.txt",
+		"/home/kabum/Projekte/www/Pandora/app/app.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/extjs/ext.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/extjs/ext-all-dev.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/extjs/ext-dev.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/model/File.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/browser/Tab.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/store/Files.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/model/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/data/icons.json",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/controller/lib/Path.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/controller/lib/Icon.js",
+		"/etc/lighttpd/lighttpd.conf",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/Viewport.js",
+		"/home/kabum/Projekte/www/Pandora/app/controller/Station.js",
+		"/home/kabum/Projekte/www/Pandora/app/view/StationsList.js",
+		"/home/kabum/Projekte/www/Pandora/app/controller/Song.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/Browser.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/data/files.json",
+		"/home/kabum/Projekte/www/Pandora/app/store/Stations.js",
+		"/home/kabum/Projekte/www/Pandora/app/store/SearchResults.js",
+		"/home/kabum/Projekte/www/Pandora/app/store/RecentSongs.js",
+		"/home/kabum/Projekte/www/Pandora/app/model/Station.js",
+		"/home/kabum/Projekte/www/Pandora/app/model/Song.js",
+		"/home/kabum/Projekte/www/Pandora/app/view/NewStation.js",
+		"/home/kabum/Projekte/www/Pandora/app/view/RecentlyPlayedScroller.js",
+		"/home/kabum/Projekte/www/Pandora/app/view/SongControls.js",
+		"/home/kabum/.config/sublime-text-2/README.md",
+		"/home/kabum/.config/sublime-text-2/Packages/Default/Global.sublime-settings",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/konten.tex",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_transfers.tex",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Abschluesse.pm",
+		"/home/kabum/Dokumente/CSN/Datenbank-Schema/2011-11-06/schema.sql",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_konten.tex",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/CSN.pm",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/Makefile",
+		"/home/kabum/test.pl",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Texify.pm.in",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Generic.pm",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Transfer.pm",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/DB/Host.pm",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/DB/User.pm",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-dynamic/intern/finanz_info.pl.in",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-dynamic/intern/finanz_abschluss.pl.in",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss.tex",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/transfers.tex",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_kategorien.tex",
+		"/home/kabum/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Jahre.pm",
+		"/home/kabum/Projekte/Empire/docs/Pflichtenheft/LaTeX/kommando-struktur.svg",
+		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_recv_db.pm",
+		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_recv.pm",
+		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_upload.pm",
+		"/home/kabum/rel-3-0-branch/www-dynamic/intern/stuwe/stuwe_abrechnung.pl.in",
+		"/home/kabum/Projekte/Empire/Makefile",
+		"/home/kabum/Projekte/Empire/docs/Pflichtenheft/LaTeX/PH00-Titelblatt.tex"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Ext.app.FileTreeLoader",
+			"\"",
+			"tore",
+			"	",
+			"\"",
+			"	",
+			"\"",
+			"\":",
+			"	\"",
+			"\\t\"",
+			"\"",
+			"SmartWFM.Icon",
+			",\\n.*title: \"\"",
+			"\"",
+			"folder",
+			"encodin",
+			"#icon",
+			"#tab-view",
+			"#files-icon-view",
+			"#images-view",
+			"#images-view ",
+			"src",
+			"all(-",
+			"all(",
+			"all-",
+			"all",
+			"match = ",
+			"match",
+			"ext-",
+			"debug",
+			"|-de",
+			"|de",
+			"|d",
+			"dev",
+			"title: \".+\"",
+			"title: \".*\"",
+			"title: \"",
+			"rig",
+			"margin",
+			"items",
+			"name_sh",
+			"csn_nutzer_hat_status",
+			"csn_nutzer_hat_status AS",
+			"csn_nutzer_hat_status ",
+			"csn_nutzer_hat_sta",
+			"nutzer_neu_abgemeldet",
+			"check_existance",
+			"nutzer_neu_abg",
+			"#TEMPLATEPATH#",
+			"_TEMPLATEDIR",
+			"transfer",
+			"titel",
+			"konten_tex",
+			"gen_",
+			"gen",
+			"gen_",
+			"quartal",
+			"$quartal",
+			"fj",
+			"fj ",
+			"$fj ",
+			"$totals_te",
+			"to_html",
+			"delete",
+			"'",
+			"hvbereich",
+			"function ",
+			"function",
+			"fun",
+			"host_id",
+			"add con",
+			"aufgabendgebiet_fk",
+			"mit hil",
+			"trim",
+			"line",
+			"warning",
+			"fgctitle",
+			"bgctitle"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'",
+			"\\t * ",
+			"'",
+			"\\t *",
+			"'",
+			":",
+			"\\t",
+			"",
+			"SmartWFM.lib.Icon",
+			"",
+			"'",
+			".icon",
+			"#icon-view",
+			"#tab-view",
+			"#files-icon-view",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "swfm/swfm-extjs4/app/view/browser/Tab.js",
+					"settings":
+					{
+						"buffer_size": 911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "swfm/swfm-extjs4/app/view/browser/IconView.js",
+					"settings":
+					{
+						"buffer_size": 1081,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1033,
+								1033
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"extcss",
+				"swfm/extjs/resources/css/ext-all.css"
+			],
+			[
+				"browser",
+				"swfm-extjs4/app/browser.css"
+			],
+			[
+				"appli",
+				"swfm-extjs4/app/Application.js"
+			],
+			[
+				"data-vie",
+				"test/data-view.js"
+			],
+			[
+				"dragsel",
+				"swfm-extjs4/ux/DataView/DragSelector.js"
+			],
+			[
+				"icons",
+				"swfm/classes/icons.js"
+			],
+			[
+				"iconvi",
+				"swfm-extjs4/app/view/browser/IconView.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 182.0,
+	"status_bar_visible": true
+}
