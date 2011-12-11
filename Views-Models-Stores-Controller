@@ -1,0 +1,23 @@
+Views:
+	TopBar
+	Browser
+	Accordion - Sidepanel
+		- Tree
+		- Search Result
+		- Bookmarks
+	StatusBar
+
+Models:
+	FileModel
+	TreeModel
+	SearchNBookmarkModel
+	
+
+Stores:
+	BrowserStore
+	TreeStore
+	SearchStore
+	BookmarkStore
+	
+Controllers:
+	
