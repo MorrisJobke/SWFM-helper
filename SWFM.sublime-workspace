@@ -180,6 +180,8 @@
 	},
 	"file_history":
 	[
+		"/home/kabum/Projekte/SmartWFM/.gitignore",
+		"/home/kabum/Projekte/www/Tests/app.jsb3",
 		"/home/kabum/.gvfs/SFTP auf helmut.local/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
 		"/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
 		"/home/kabum/.gvfs/SFTP auf helmut.local/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
@@ -305,9 +307,7 @@
 		"/home/kabum/Projekte/www/Pandora/app/view/RecentlyPlayedScroller.js",
 		"/home/kabum/Projekte/www/Pandora/app/view/SongControls.js",
 		"/home/kabum/.config/sublime-text-2/README.md",
-		"/home/kabum/.config/sublime-text-2/Packages/Default/Global.sublime-settings",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/konten.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_transfers.tex"
+		"/home/kabum/.config/sublime-text-2/Packages/Default/Global.sublime-settings"
 	],
 	"find":
 	{
@@ -725,8 +725,8 @@
 						"selection":
 						[
 							[
-								714,
-								714
+								419,
+								419
 							]
 						],
 						"settings":
