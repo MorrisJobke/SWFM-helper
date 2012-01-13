@@ -34,12 +34,84 @@
 				"buffer_size": 1081,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/controller/Browser.js",
+			"settings":
+			{
+				"buffer_size": 739,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/lib/I18n.js",
+			"settings":
+			{
+				"buffer_size": 2681,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/lib/Config.js",
+			"settings":
+			{
+				"buffer_size": 1600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/store/Files.js",
+			"settings":
+			{
+				"buffer_size": 331,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/model/File.js",
+			"settings":
+			{
+				"buffer_size": 1570,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kabum/Projekte/www/Tests/run-tests.html",
+			"settings":
+			{
+				"buffer_size": 679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kabum/Projekte/www/Tests/app-test/specs/users.js",
+			"settings":
+			{
+				"buffer_size": 839,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kabum/Projekte/www/Tests/app-test/specs/example.js",
+			"settings":
+			{
+				"buffer_size": 312,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app.jsb3",
+			"settings":
+			{
+				"buffer_size": 714,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 164.0,
+		"height": 88.0,
 		"selected_items":
 		[
 			[
@@ -91,7 +163,7 @@
 				"Preferences: Default Global Settings"
 			]
 		],
-		"width": 467.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -108,6 +180,37 @@
 	},
 	"file_history":
 	[
+		"/home/kabum/.gvfs/SFTP auf helmut.local/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
+		"/home/kabum/.gvfs/SFTP auf helmut.local/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/User/JSON.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Distraction Free.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Settings/Auto Save Session.sublime_session",
+		"/home/kabum/.config/sublime-text-2/Settings/Session.sublime_session",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
+		"/home/kabum/sublime-text/Packages/User/Base File.sublime-settings",
+		"/home/kabum/sublime-text/.git/config",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/kabum/sublime-text/Packages/User/Global.sublime-settings",
+		"/home/kabum/sublime-text/README.md",
+		"/home/kabum/.hidden",
+		"/home/kabum/Daten/Videos/pyJoin",
+		"/home/kabum/Daten/Videos/Gesehen",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app.jsb3",
+		"/home/kabum/Projekte/SmartWFM/README",
+		"/home/kabum/.ssh/config",
+		"/home/kabum/gittests/server/repo/hooks/post-receive",
+		"/home/kabum/.cache/.fr-LHIEoM/ext-4.0.7-gpl/locale/ext-lang-de.js",
+		"/home/kabum/.cache/.fr-9o0l0o/ext-4.0.7-gpl/locale/ext-lang-en.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/src/form/field/Base.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/ext-all.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/ext.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Url.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Path.js",
+		"/home/kabum/Projekte/swfm-reste/classes/path.js",
+		"/home/kabum/Downloads/faenza_and_faience_humble_indie_bundle_pack_by_tiheum-d4g9p4g/README",
+		"/home/kabum/PKGBUILD",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Tab.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Browser.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/Application.js",
@@ -137,9 +240,6 @@
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/SidePanel",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/data/files.json.old",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/browser.css",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Path.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Icon.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Url.js",
 		"/home/kabum/swfm/classes/url.js",
 		"/home/kabum/swfm/classes/path.js",
 		"/home/kabum/swfm/themes/default/theme.js",
@@ -157,8 +257,6 @@
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/Icon.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/GridView.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/path.js",
-		"/home/kabum/.config/sublime-text-2/Packages/User/Global.sublime-settings",
-		"/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
 		"/home/kabum/.config/sublime-text-2/Packages/Default/Base File.sublime-settings",
 		"/home/kabum/Projekte/www/test/data-view.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/extjs/resources/css/ext-all.css",
@@ -209,33 +307,7 @@
 		"/home/kabum/.config/sublime-text-2/README.md",
 		"/home/kabum/.config/sublime-text-2/Packages/Default/Global.sublime-settings",
 		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/konten.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_transfers.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Abschluesse.pm",
-		"/home/kabum/Dokumente/CSN/Datenbank-Schema/2011-11-06/schema.sql",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_konten.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/CSN.pm",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/Makefile",
-		"/home/kabum/test.pl",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Texify.pm.in",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Generic.pm",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Transfer.pm",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/DB/Host.pm",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/DB/User.pm",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-dynamic/intern/finanz_info.pl.in",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-dynamic/intern/finanz_abschluss.pl.in",
-		"/home/kabum/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/transfers.tex",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_kategorien.tex",
-		"/home/kabum/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/kabum/Projekte/CSN/rel-3-0-branch/libs/Application/Finanzen/Jahre.pm",
-		"/home/kabum/Projekte/Empire/docs/Pflichtenheft/LaTeX/kommando-struktur.svg",
-		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_recv_db.pm",
-		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_recv.pm",
-		"/home/kabum/rel-3-0-branch/libs/Application/Stuwe/ivc_upload.pm",
-		"/home/kabum/rel-3-0-branch/www-dynamic/intern/stuwe/stuwe_abrechnung.pl.in",
-		"/home/kabum/Projekte/Empire/Makefile",
-		"/home/kabum/Projekte/Empire/docs/Pflichtenheft/LaTeX/PH00-Titelblatt.tex"
+		"/home/kabum/Projekte/CSN/rel-3-0-branch/www-static/templates/finanzen/jahresabschluss_transfers.tex"
 	],
 	"find":
 	{
@@ -253,6 +325,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"d \\+=",
+			"t\\[0\\]",
 			"Ext.app.FileTreeLoader",
 			"\"",
 			"tore",
@@ -338,6 +412,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"r +=",
+			"v[i]",
 			"'",
 			"\\t * ",
 			"'",
@@ -364,7 +440,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -379,8 +455,8 @@
 						"selection":
 						[
 							[
-								231,
-								231
+								249,
+								249
 							]
 						],
 						"settings":
@@ -406,8 +482,8 @@
 						"selection":
 						[
 							[
-								1033,
-								1033
+								1054,
+								1054
 							]
 						],
 						"settings":
@@ -420,7 +496,256 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "swfm/swfm-extjs4/app/controller/Browser.js",
+					"settings":
+					{
+						"buffer_size": 739,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "swfm/swfm-extjs4/app/lib/I18n.js",
+					"settings":
+					{
+						"buffer_size": 2681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2319,
+								2319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "swfm/swfm-extjs4/app/lib/Config.js",
+					"settings":
+					{
+						"buffer_size": 1600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1012,
+								1012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "swfm/swfm-extjs4/app/store/Files.js",
+					"settings":
+					{
+						"buffer_size": 331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "swfm/swfm-extjs4/app/model/File.js",
+					"settings":
+					{
+						"buffer_size": 1570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/kabum/Projekte/www/Tests/run-tests.html",
+					"settings":
+					{
+						"buffer_size": 679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								670,
+								670
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/kabum/Projekte/www/Tests/app-test/specs/users.js",
+					"settings":
+					{
+						"buffer_size": 839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								438,
+								438
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/kabum/Projekte/www/Tests/app-test/specs/example.js",
+					"settings":
+					{
+						"buffer_size": 312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "swfm/swfm-extjs4/app.jsb3",
+					"settings":
+					{
+						"buffer_size": 714,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								714,
+								714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -441,11 +766,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
