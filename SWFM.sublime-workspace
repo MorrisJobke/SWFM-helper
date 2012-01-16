@@ -39,6 +39,65 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "swfm/swfm-extjs4/app/controller/Browser.js",
+			"settings":
+			{
+				"buffer_size": 5061,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/view/browser/IconView.js",
+			"settings":
+			{
+				"buffer_size": 1081,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/view/browser/Tab.js",
+			"settings":
+			{
+				"buffer_size": 965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/view/browser/GridView.js",
+			"settings":
+			{
+				"buffer_size": 1735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n@author Philipp Seidel\n@since 0.3\n@class SWFM.Widget.Browser\n@namespace SWFM.Widget\n*/\n\n(function () {\n	// this css is for the icon view\n	SWFM.Resource.loadStyle('widgets/browser/css/main.css');\n\n	var Widget = {\n		/*\n		 * Initialize the browser widget.\n		 */\n		init: function () {\n			// console.groupCollapsed('SWFM.Widget.Browser: init()');\n\n			console.groupCollapsed('SWFM.Widget.Browser: Creating DragSelector');\n\n			// the DragSelector is used in the IconView, to select folders and files easily\n			Ext.DataView.DragSelector = function (cfg) {\n				cfg = cfg || {};\n				var view, regions, proxy, tracker;\n				var rs, bodyRegion, dragRegion = new Ext.lib.Region(0, 0, 0, 0);\n				var dragSafe = cfg.dragSafe === true;\n				this.init = function (dataView) {\n					view = dataView;\n					view.on('render', onRender);\n				};\n\n				function fillRegions() {\n					rs = [];\n					view.all.each(function (el) {\n						rs[rs.length] = el.getRegion();\n					});\n					bodyRegion = view.el.getRegion();\n				}\n\n				function cancelClick() {\n					return false;\n				}\n\n				function onBeforeStart(e) {\n					return !dragSafe || e.target === view.el.dom;\n				}\n\n				function onStart(e) {\n					view.on('containerclick', cancelClick, view, {single: true});\n					if (!proxy) {\n						proxy = view.el.createChild({cls: 'x-view-selector'});\n					} else {\n						proxy.setDisplayed('block');\n					}\n					fillRegions();\n					view.clearSelections();\n				}\n\n				function onDrag(e) {\n					var startXY = tracker.startXY;\n					var xy = tracker.getXY();\n\n					var x = Math.min(startXY[0], xy[0]);\n					var y = Math.min(startXY[1], xy[1]);\n					var w = Math.abs(startXY[0] - xy[0]);\n					var h = Math.abs(startXY[1] - xy[1]);\n\n					var i;\n					var r;\n					var sel;\n\n					dragRegion.left = x;\n					dragRegion.top = y;\n					dragRegion.right = x + w;\n					dragRegion.bottom = y + h;\n\n					dragRegion.constrainTo(bodyRegion);\n					proxy.setRegion(dragRegion);\n\n					for (i = 0, len = rs.length; i < len; i++) {\n						r = rs[i];\n						sel = dragRegion.intersect(r);\n						if (sel && !r.selected) {\n							r.selected = true;\n							view.select(i, true);\n						} else if (!sel && r.selected) {\n							r.selected = false;\n							view.deselect(i);\n						}\n					}\n				}\n\n				function onEnd(e) {\n					if (proxy) {\n						proxy.setDisplayed(false);\n					}\n				}\n\n				function onRender(view) {\n					tracker = new Ext.dd.DragTracker({\n						onBeforeStart: onBeforeStart,\n						onStart: onStart,\n						onDrag: onDrag,\n						onEnd: onEnd\n					});\n					tracker.initEl(view.el);\n				}\n			};\n\n			console.groupEnd();\n			console.groupCollapsed('SWFM.Widget.Browser: Creating ViewTab');\n\n			/**\n			 * @namespace SWFM.Widget.Browser\n			 * @class SWFM.Widget.Browser.ViewTab\n			 *\n			 * Use ViewTab to create a new tab object and append it to the browser widget\n			 */\n			var ViewTab = Ext.extend(Ext.Panel, {\n				viewMode: '',\n				store: null,\n				path: '',\n				/**\n				 * @var {private List} history a list of folder, the user has visited in the tab\n				 */\n				history: [],\n				/**\n				 * @var {private Integer} history_index the current position in the history list\n				 */\n				history_index: 0,\n				/**\n				 * Get the store used by this tab\n				 *\n				 * @function {public ExtJS.Data.Store} ?\n				 * @return a ExtJS.Data.Store object\n				 */\n				getStore: function () {\n					console.groupCollapsed('SWFM.Widget.Browser: ViewTab.getStore()');\n					console.debug('Arguments: ', arguments);\n					console.debug('Return: ', store);\n					console.groupEnd();\n\n					return store;\n				},\n\n				getPath: function () {\n					console.groupCollapsed('SWFM.Widget.Browser: ViewTab.getPath()');\n					console.debug('Arguments: ', arguments);\n					console.debug('Return: ', this.path);\n					console.groupEnd();\n\n					return this.path;\n				},\n				refresh: function (path) {\n					console.groupCollapsed('SWFM.Widget.Browser: ViewTab.refresh()');\n					console.debug('Arguments: ', arguments);\n					console.log('New path: ', path, 'Current path: ', this.path);\n\n					if (path === this.path) {\n						this.store.load();\n					}\n\n					console.groupEnd();\n				},\n\n				_setPath: function (path, history_index) {\n					// console.groupCollapsed('SWFM.Widget.Browser: ViewTab._setPath()');\n					// console.debug('Arguments: ', arguments);\n\n					var i;\n\n					if (history_index !== undefined) {\n						this.history_index = history_index;\n					}\n					this.toolbars[0].find('name', 'path')[0].setValue(path);\n\n					var store = this.store;\n					this.path = path;\n\n					store.swfmRequestData = {\n						path: path,\n						showHidden: SWFM.Setting.getValue('swfm.files.show_hidden', false)\n					};\n\n					store.load();\n\n					if (path === '/') {\n						this.title = '/';\n					} else {\n						// fix - trailing '/' results in empty title\n						if(path[path.length - 1] == '/')\n							path = path.substr(0, path.length - 1);\n						var tmp = path.split('/');\n						if (tmp.length > 0) {\n							this.setTitle(tmp[tmp.length - 1]);\n						}\n					}\n					var bt_back = this.toolbars[0].find('name', 'back')[0];\n					bt_back.menu.removeAll();\n					if (this.history_index > 0 && this.history.length > 1) {\n						bt_back.setDisabled(false);\n						for (i = this.history_index - 1; i >= 0; i--) {\n							bt_back.menu.add(\n								new Ext.menu.Item({\n									text: this.history[i],\n									scope: {\n										tab: this,\n										history_index: i,\n										path: this.history[i]\n									},\n									handler: function () {\n										this.tab._setPath(this.path, this.history_index);\n									}\n								})\n							);\n						}\n					} else {\n						bt_back.setDisabled(true);\n					}\n\n					var bt_forward = this.toolbars[0].find('name', 'forward')[0];\n					bt_forward.menu.removeAll();\n					if (this.history.length - 1 > this.history_index) {\n						bt_forward.setDisabled(false);\n						for (i = this.history_index + 1; i < this.history.length; i++) {\n							bt_forward.menu.add(\n								new Ext.menu.Item({\n									text: this.history[i],\n									scope: {\n										tab: this,\n										history_index: i,\n										path: this.history[i]\n									},\n									handler: function () {\n										this.tab._setPath(this.path, this.history_index);\n									}\n								})\n							);\n						}\n					} else {\n						bt_forward.setDisabled(true);\n					}\n					SWFM.Event.fire(\n						'widget_browser',\n						'activate_folder',\n						path\n					);\n\n					// console.groupEnd();\n				},\n\n				setPath: function (path) {\n					// console.groupCollapsed('SWFM.Widget.Browser: ViewTab.setPath()');\n					// console.debug('Arguments: ', arguments);\n\n					if (this.history.length > this.history_index + 1) {\n						this.history = this.history.slice(0, this.history_index + 1);\n					}\n					this.history.push(path);\n					if (this.history.length > 10) {\n						this.history.shift();\n					}\n					this.history_index = this.history.length - 1;\n\n					this._setPath.apply(this, [path]);\n\n					// console.groupEnd();\n				},\n\n				setViewMode: function (mode) {\n					//~ console.groupCollapsed('SWFM.Widget.Browser: ViewTab.setViewMode()');\n					//~ console.debug('Arguments: ', arguments);\n\n					if (mode === this.viewMode) {\n						return true;\n					}\n\n					switch (mode) {\n						case 'data':\n							var view = new Ext.DataView({\n								style:'overflow:auto',\n								simpleSelect: true,\n								swfmParent: this,\n								plugins:[\n									new Ext.DataView.DragSelector({dragSafe:true})\n								]\n							});\n							break;\n						case 'list':\n							this.viewMode = mode;\n							var date_format = SWFM.Config.get('swfm.date', 'datetime');\n							if (date_format === 'datetime') {\n								date_format = 'Y-m-d H:i:s';\n							}\n\n							var grid = new Ext.grid.GridPanel({\n								swfmParent: this,\n								autoExpandColumn: 'name',\n								viewConfig: {\n									forceFit: true\n								},\n								loadMask: true,\n								stripeRows: true,\n								border: false,\n								listeners: {\n									_contextmenu: function (e) {\n										// get config\n										var context_menu = SWFM.Config.get('widget.browser.menu.context');\n\n										// get menu\n										var menu = SWFM.Menu.get(\n											context_menu,\n											{\n												'path': this.swfmParent.getPath()\n											}\n										);\n\n										// show and stop event\n										menu.showAt(e.getXY());\n									},\n\n									_rowaction: function (self, rowIndex, e) {\n										var store = self.getStore();\n										record = store.getAt(rowIndex);\n										if (record.data.isDir === true) {\n											var path = SWFM.Path.join(record.data.path, record.data.name);\n											Ext.getCmp('swfm-widget-browser').setPath(path);\n											SWFM.Event.fire(\n												'widget_browser',\n												'activate_folder',\n												path\n											);\n										}\n									},\n\n									_rowcontextmenu: function (self, rowIndex, e) {\n										// check if the clicked row is selected\n										if (!self.getSelectionModel().isSelected(rowIndex)) {\n											self.getSelectionModel().selectRow(rowIndex);\n										}\n\n										// some vars\n										var i;\n										var dirs = [];\n										var files = [];\n										var selection = this.getSelectionModel().getSelections();\n\n										console.log('selections', selection);\n\n										// sort selected items by isDir() or not\n										for (i = 0; i < selection.length; i++) {\n											if (selection[i].isDir === true) {\n												dirs.push(selection[i].data);\n											} else {\n												files.push(selection[i].data);\n											}\n										}\n\n										// get config\n										var context_menu = SWFM.Config.get('widget.browser.menu.item_context');\n\n										// get menu\n										var menu = SWFM.Menu.get(\n											context_menu,\n											{\n												dirs: dirs,\n												files: files\n											}\n										);\n\n										// show and stop event\n										menu.showAt(e.getXY());\n									},\n\n									contextmenu: function (e) {\n										if (e.hasModifier() === true) {\n											if (SWFM.Setting.getValue('swfm.controls.context_menu') === 5) {\n												this.fireEvent('_contextmenu', e);\n											}\n										} else {\n											if (SWFM.Setting.getValue('swfm.controls.context_menu') === 2) {\n												this.fireEvent('_contextmenu', e);\n											}\n										}\n										e.stopEvent();\n									},\n\n									dblclick: function (e) {\n										if (e.hasModifier() === true) {\n											if (SWFM.Setting.getValue('swfm.controls.context_menu') === 6) {\n												this.fireEvent('_contextmenu', e);\n											}\n										} else {\n											if (SWFM.Setting.getValue('swfm.controls.context_menu') === 3) {\n												this.fireEvent('_contextmenu', e);\n											}\n										}\n										e.stopEvent();\n									},\n\n									rowclick: function (self, rowIndex, e) {\n										var time = new Date().getTime();\n										var delay = SWFM.Setting.getValue('swfm.controls.dblclick.delay');\n										if ((self.lastClick === undefined) || (time - self.lastClick > delay)) {\n											self.lastClick = time;\n											var task = new Ext.util.DelayedTask(function (self, rowIndex, e) {\n												var time = new Date().getTime();\n												if (self.lastClick === undefined) {\n													return;\n												}\n												// event\n												if (e.hasModifier() === true) {\n													if (SWFM.Setting.getValue('swfm.controls.action') === 4) {\n														self.fireEvent('_rowaction', self, rowIndex, e);\n													} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 4) {\n														self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n													}\n												} else {\n													if (SWFM.Setting.getValue('swfm.controls.action') === 1) {\n														self.fireEvent('_rowaction', self, rowIndex, e);\n													} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 1) {\n														self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n													}\n												}\n											}, this, [self, rowIndex, e]);\n											task.delay(delay);\n										}\n										e.stopEvent();\n									},\n\n									rowcontextmenu: function (self, rowIndex, e) {\n										if (e.hasModifier() === true) {\n											if (SWFM.Setting.getValue('swfm.controls.action') === 6) {\n												self.fireEvent('_rowaction', self, rowIndex, e);\n											} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 6) {\n												self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n											}\n										} else {\n											if (SWFM.Setting.getValue('swfm.controls.action') === 3) {\n												self.fireEvent('_rowaction', self, rowIndex, e);\n											} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 3) {\n												self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n											}\n										}\n										e.stopEvent();\n									},\n\n									rowdblclick: function (self, rowIndex, e) {\n										self.lastClick = undefined;\n										if (e.hasModifier() === true) {\n											if (SWFM.Setting.getValue('swfm.controls.action') === 6) {\n												self.fireEvent('_rowaction', self, rowIndex, e);\n											} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 6) {\n												self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n											}\n										} else {\n											if (SWFM.Setting.getValue('swfm.controls.action') === 3) {\n												self.fireEvent('_rowaction', self, rowIndex, e);\n											} else if (SWFM.Setting.getValue('swfm.controls.context_menu') === 3) {\n												self.fireEvent('_rowcontextmenu', self, rowIndex, e);\n											}\n										}\n										e.stopEvent();\n									}\n								}\n							});\n							this.removeAll();\n							this.add(grid);\n							this.doLayout();\n							break;\n					}\n					//~ console.groupEnd();\n				},\n				listeners: {\n					beforeclose: function(p) {\n						if(this.ownerCt.openTabs == 1)\n							return false;\n					},\n					close: function(p) {\n						this.ownerCt.openTabs -= 1;\n					},\n					activate: function(p) {\n						SWFM.Event.fire(\n							'widget_browser',\n							'switch_tab',\n							this.path\n						);\n					}\n				}\n			});\n\n			console.groupEnd();\n			console.groupCollapsed('SWFM.Widget.Browser: Creating Widget');\n\n			/**\n			 * @namespace SWFM.Widget\n			 * @class SWFM.Widget.Browser\n			 *\n			 * The main Browser Widget class\n			 */\n			SWFM.Widget.Browser = Ext.extend(Ext.TabPanel, {\n				region: 'center',\n				id: 'swfm-widget-browser',\n				openTabs: 0,\n\n				/**\n				Initialize the component\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				initComponent : function (config) {\n//					console.groupCollapsed('SWFM.Widget.Browser.initComponent()');\n//					console.debug('Arguments: ', arguments);\n\n					SWFM.Widget.Browser.superclass.initComponent.call(this, config);\n					SWFM.Event.register(\n						'widget_browser',\n						'refresh',\n						{\n							callback: this.refresh,\n							scope: this\n						}\n					);\n					SWFM.Event.register(\n						'widget_browser',\n						'activate_folder',\n						{\n							callback: this.setPath,\n							scope: this\n						}\n					);\n					SWFM.Event.register(\n						'widget_browser',\n						'folder_open',\n						{\n							callback: this.newTab,\n							scope: this\n						}\n					);\n					SWFM.Event.register(\n						'widget_browser',\n						'setting_changed',\n						{\n							callback: this.settingChanged,\n							scope: this\n						}\n					);\n					SWFM.Event.register(\n						'widget_browser',\n						'activate_folder_error',\n						{\n							callback: this.revert,\n							scope: this\n						}\n					);\n\n//					console.groupEnd();\n				},\n				getCurPath: function () {\n				},\n\n				/**\n				Get the current store\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				getCurStore: function () {\n					console.groupCollapsed('SWFM.Widget.Browser.getCurStore()');\n					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n\n					console.debug('Return: ', cur_tab.items.first().getStore());\n					console.groupEnd();\n\n					return cur_tab.items.first().getStore();\n				},\n\n				/**\n				Get the selected items of the current store\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				getCurSelections: function () {\n					console.groupCollapsed('SWFM.Widget.Browser.getCurSelections()');\n					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n					var ret = [];\n\n					switch (cur_tab.viewMode) {\n						case 'data':\n							ret = cur_tab.items.first().getSelectedRecords();\n							break;\n						case 'list':\n							ret = cur_tab.items.first().getSelectionModel().getSelections();\n							break;\n					}\n\n					console.debug('Return: ', ret);\n					console.groupEnd();\n					return ret;\n				},\n\n				/**\n				Create a new Tab\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				newTab : function (path, activate) {\n//					console.groupCollapsed('SWFM.Widget.Browser.newTab()');\n//					console.debug('Arguments: ', arguments);\n\n					if (path === undefined) {\n						path = this.getPath();\n					}\n					if (activate === true) {\n						SWFM.Event.fire(\n							'widget_browser',\n							'activate_folder',\n							path\n						);\n					}\n\n					var convertMimeToIcon = function (mime_type, record) {\n						if (record.isDir === true) {\n							return SWFM.Icon.get('place', 'folder');\n						}\n						return SWFM.Icon.get('mime', mime_type);\n					};\n\n					var convertFileName = function (v, record) {\n						var w = v;\n						if(v.length > 12) {\n							w = v.substr(0, 3);\n							w += '...';\n							w += v.substr(v.length-6);\n						}\n						return Ext.util.Format.htmlEncode(w);\n					};\n\n					var convertFilePermissions = function (v, record) {\n						// convert to string and get the last 3 characters\n						var t = v + '';\n						t = t.slice(-3);\n\n						var d = '';\n						var i;\n\n						for (i = 0; i < 3; i++) {\n							d += (t[0] === '7') ? 'rwx' : '';\n							d += (t[0] === '6') ? 'rw-' : '';\n							d += (t[0] === '5') ? 'r-x' : '';\n							d += (t[0] === '4') ? 'r--' : '';\n							d += (t[0] === '3') ? '-wx' : '';\n							d += (t[0] === '2') ? '-w-' : '';\n							d += (t[0] === '1') ? '--x' : '';\n							d += (t[0] === '0') ? '---' : '';\n						}\n\n						return d;\n					};\n\n					var store = new SWFM.RPC.Store({\n						swfmRequestAction: 'file.list',\n						sortInfo: {\n							field: 'name',\n							direction: 'ASC' // or 'DESC' overridden sort function to sort case insensitive (in SWFM.RPC.Store)\n						},\n						errorMessages: {\n							'-1': SWFM.I18N.get('plugin.base_actions.error', 'Directory doesn\\'t exists'),\n							'-9': SWFM.I18N.get('swfm.error', 'Permission denied')\n						},\n						fields: [\n							{name: 'name', mapping: 'name'},\n							{name: 'path', mapping: 'path'},\n							{name: 'mime_type', mapping: 'mime-type'},\n							{name: 'icon', mapping: 'mime-type', convert: convertMimeToIcon},\n							{name: 'name_short', mapping: 'name', convert: convertFileName},\n							{name: 'name_display', mapping: 'name', convert: Ext.util.Format.htmlEncode},\n							{name: 'size', mapping: 'size'},\n							{name: 'isDir', mapping: 'isDir'},\n							{name: 'atime', mapping: 'atime', type: 'date', dateFormat: 'U'},\n							{name: 'ctime', mapping: 'ctime', type: 'date', dateFormat: 'U'},\n							{name: 'mtime', mapping: 'mtime', type: 'date', dateFormat: 'U'},\n							{name: 'perms', mapping: 'perms', convert: convertFilePermissions}\n						],\n						listeners: {\n							'datachanged': function (store) {\n								//console.log('load',store);\n								var folders = [];\n								var folder_keys = [];\n								var files = [];\n								var file_keys = [];\n								var i;\n\n								for (i = 0; i < store.data.length; i++) {\n									var item = store.data.items[i];\n									if (item.data.isDir === true) {\n										folders.push(item);\n										folder_keys.push(item.id);\n									} else {\n										files.push(item);\n										file_keys.push(item.id);\n									}\n								}\n								store.data.items = folders.concat(files);\n								store.data.keys = folder_keys.concat(file_keys);\n							}\n						}\n					});\n\n					var myMask = new Ext.LoadMask(Ext.getBody(), {\n						msg: SWFM.I18N.get('swfm', 'Please wait'),\n						store: store\n					});\n					Ext.QuickTips.init();\n					var tab = new ViewTab({\n						title: 'Tab',\n						closable: true,\n						layout: 'fit',\n						store: store,\n						tbar: new Ext.Toolbar(),\n						items: []\n					});\n\n					tab.toolbars[0].add(\n						new Ext.SplitButton({\n							text: SWFM.I18N.get('widget.browser', 'Back'),\n							tooltip: SWFM.I18N.get('widget.browser', 'Back'),\n							name: 'back',\n							menu: new Ext.menu.Menu(),\n							icon: SWFM.Icon.get('action', 'go.previous', '16x16'),\n							handler: function () {\n								this._setPath(this.history[this.history_index - 1], this.history_index - 1);\n							},\n							scope: tab\n						})\n					);\n					tab.toolbars[0].add(\n						new Ext.SplitButton({\n							text: SWFM.I18N.get('widget.browser', 'Forward'),\n							tooltip: SWFM.I18N.get('widget.browser', 'Forward'),\n							name: 'forward',\n							menu: new Ext.menu.Menu(),\n							icon: SWFM.Icon.get('action', 'go.next', '16x16'),\n							handler: function () {\n								this._setPath(this.history[this.history_index + 1], this.history_index + 1);\n							},\n							scope: tab\n						})\n					);\n\n					tab.toolbars[0].add('-');\n\n					tab.toolbars[0].add(SWFM.I18N.get('widget.browser', 'Path:'));\n\n					tab.toolbars[0].add(\n						new Ext.form.TextField({\n							width: 'auto',\n							name: 'path',\n							listeners: {\n								specialkey: function (self, e) {\n									if (e.getKey() === e.ENTER) {\n										this.parent_tab.setPath(this.parent_tab.toolbars[0].find('name', 'path')[0].getValue());\n									}\n								}\n							},\n							parent_tab: tab\n						})\n					);\n\n					tab.toolbars[0].add(\n						new Ext.Button({\n							text: SWFM.I18N.get('widget.browser', 'Go'),\n							tooltip: SWFM.I18N.get('widget.browser', 'Go'),\n							icon: SWFM.Icon.get('action', 'go.location', '16x16'),\n							handler: function () {\n								this.setPath(this.toolbars[0].find('name', 'path')[0].getValue());\n							},\n							scope: tab\n						})\n					);\n\n					tab.toolbars[0].add('->');\n\n					tab.toolbars[0].add('Filter:');\n					tab.toolbars[0].add(\n						new Ext.form.TextField({\n							fieldLabel: SWFM.I18N.get('widget.browser', 'Filter'),\n							width: 'auto',\n							name: 'filter',\n							listeners: {\n								specialkey: function (self, e) {\n									var cmp;\n\n									if (e.getKey() === e.ENTER) {\n										cmp = this.tab.toolbars[0].find('name', 'filter_apply');\n										if (cmp.length === 0) {\n											// stop if no child was found\n											// this should never happen\n											return;\n										}\n										cmp = cmp[0].menu.find('name', 'use_regex');\n										if (cmp.length === 0) {\n											// stop if no child was found\n											// this should never happen\n											return;\n										}\n										var filter = this.tab.toolbars[0].find('name', 'filter')[0].getValue();\n										// if checked we use a regex to filter\n										if (cmp[0].checked === true) {\n											filter = new RegExp(filter);\n										}\n										// ToDo: check if everything is ok\n										this.tab.items.items[0].getStore().filter('name', filter, true, false);\n									}\n								}\n							},\n							tab: tab\n						})\n					);\n\n					tab.toolbars[0].add(\n						new Ext.SplitButton({\n							name: 'filter_apply',\n							text: SWFM.I18N.get('widget.browser', 'Apply'),\n							tooltip: SWFM.I18N.get('widget.browser', 'Apply'),\n							handler: function (self, e) {\n								var cmp = self.menu.find('name', 'use_regex');\n								if (cmp.length === 0) {\n									// stop if no child was found\n									// this should never happen\n									return;\n								}\n								var filter = this.tab.toolbars[0].find('name', 'filter')[0].getValue();\n								// if checked we use a regex to filter\n								if (cmp[0].checked === true) {\n									filter = new RegExp(filter);\n								}\n								// ToDo: check if everything is ok\n								this.tab.items.items[0].getStore().filter('name', filter, true, false);\n							},\n							menu: {\n								items: [\n									new Ext.menu.CheckItem({\n										name: 'use_regex',\n										text: SWFM.I18N.get('widget.browser', 'Use RegEx')\n									})\n								]\n							},\n							scope: {\n								tab: tab\n							}\n						})\n					);\n\n					tab.toolbars[0].add(\n						new Ext.Button({\n							text: SWFM.I18N.get('widget.browser', 'Clear'),\n							tooltip: SWFM.I18N.get('widget.browser', 'Clear'),\n							handler: function (self, e) {\n								// ToDo: check if everything is ok\n								this.tab.toolbars[0].find('name', 'filter')[0].setValue('');\n								this.tab.items.items[0].getStore().clearFilter();\n							},\n							scope: {\n								tab: tab\n							}\n						})\n					);\n					if (SWFM.Setting.getValue('widget.browser.default_view') === 2) {\n						tab.setViewMode('list');\n					} else {\n						tab.setViewMode('data');\n					}\n\n					tab.setPath(path);\n\n					this.openTabs += 1;\n					this.add(tab);\n					this.doLayout();\n\n					if (activate === true) {\n						this.activate(tab);\n					}\n\n//					console.groupEnd();\n				},\n\n				/**\n				Get the current path\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				getPath: function () {\n					console.groupCollapsed('SWFM.Widget.Browser.getPath()');\n					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n\n					console.debug('Return: ', cur_tab.getPath());\n					console.groupEnd();\n\n					return cur_tab.getPath();\n				},\n\n				/**\n				Refresh the store\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				refresh: function (path) {\n					console.groupCollapsed('SWFM.Widget.Browser.refresh()');\n					console.debug('Arguments: ', arguments);\n\n					var i;\n					for (i = 0; i < this.items.items.length; i++) {\n						this.items.items[i].refresh(path);\n					}\n\n					console.groupEnd();\n				},\n\n				/**\n				Set the path to show\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				setPath: function (path) {\n//					console.groupCollapsed('SWFM.Widget.Browser.setPath()');\n//					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n\n//					console.log('Current Tab: ', cur_tab);\n\n					cur_tab.setPath(path);\n\n//					console.groupEnd();\n				},\n\n				settingChanged: function (setting_id) {\n//					console.groupCollapsed('SWFM.Widget.Browser.settingChanged()');\n//					console.debug('Arguments: ', arguments);\n\n					var path = this.getPath();\n					var cur_tab = this.getActiveTab();\n\n					cur_tab._setPath.apply(cur_tab, [path]);\n\n					this.setViewMode();\n\n//					console.groupEnd();\n				},\n\n				/**\n				Set the view mode\n				@function {public} ?\n				@author phse\n				@since 0.3\n				*/\n				setViewMode: function () {\n//					console.groupCollapsed('SWFM.Widget.Browser.setViewMode()');\n//					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n\n//					console.log('Current Tab: ', cur_tab);\n\n					var ret = false;\n					if (cur_tab !== undefined) {\n						if (SWFM.Setting.getValue('widget.browser.default_view') === 2) {\n							ret = cur_tab.setViewMode('list');\n						} else {\n							ret = cur_tab.setViewMode('data');\n						}\n					}\n\n//					console.debug('Return: ', ret);\n//					console.groupEnd();\n\n					return ret;\n				},\n\n				/**\n				Revert last browsing action, because an error occured\n\n				@function {public} ?\n				@author kabum\n				@since 0.8\n				*/\n				revert: function () {\n					console.groupCollapsed('SWFM.Widget.Browser.revert()');\n					console.debug('Arguments: ', arguments);\n\n					var cur_tab = this.getActiveTab();\n\n					if(cur_tab.history.length == 1) {\n						// it's the first element where the error occurs...may the root path is wrong ;)\n						console.warn('it\\'s the first element where the error occurs...may the root path is wrong ;)');\n						console.groupEnd();\n						return;\n					}\n					// remove last element (where error occured)\n					cur_tab.history.pop();\n\n					console.groupEnd();\n\n					// go back to last path\n					cur_tab.setPath(cur_tab.history[cur_tab.history.length-1]);\n				}\n			});\n\n			console.groupEnd();\n//			console.groupCollapsed('SWFM.Widget.Browser: Creating menu-items');\n\n			/**\n			Menu item to select the icon view mode\n			*/\n			var IconView = Ext.extend(Ext.menu.Item,{\n				text: SWFM.I18N.get('widget.browser', 'Icon View'),\n				icon: SWFM.Icon.get('action', 'view.list.icons', '32x32'),\n				handler: function () {\n					SWFM.Setting.setValue('widget.browser.default_view', 1);\n					Ext.getCmp('swfm-widget-browser').settingChanged();\n				}\n			});\n			SWFM.Menu.add('iconview', IconView);\n			/**\n			Menu item to select the list view mode\n			*/\n			var ListView = Ext.extend(Ext.menu.Item,{\n				text: SWFM.I18N.get('widget.browser', 'List View'),\n				icon: SWFM.Icon.get('action', 'view.list.details', '32x32'),\n				handler: function () {\n					SWFM.Setting.setValue('widget.browser.default_view', 2);\n					Ext.getCmp('swfm-widget-browser').settingChanged();\n				}\n			});\n			SWFM.Menu.add('listview', ListView);\n\n//			console.groupEnd();\n//			console.groupEnd();\n\n			return SWFM.Widget.Browser;\n		}\n	};\n	SWFM.Widget.register('browser', Widget);\n\n	SWFM.Setting.registerComponent('widget.browser', {label: 'Browser'});\n\n	// file options\n	SWFM.Setting.registerGroup('widget.browser', 'view', {label: SWFM.I18N.get('widget.browser', 'View')});\n	SWFM.Setting.register(\n		'widget.browser.default_view',\n		'widget.browser',\n		'view',\n		'default_view',\n		{\n			label: SWFM.I18N.get('widget.browser', 'Default View'),\n			type: 'select',\n			'default': SWFM.Config.get('widget.browser.default_view', 1),	// have to be put in quotes for opera and yui - reseverd word\n			data: [\n				{\n					title: SWFM.I18N.get('widget.browser', 'Icon View'),\n					value: 1\n				},\n				{\n					title: SWFM.I18N.get('widget.browser', 'List View'),\n					value: 2\n				}\n			]\n		}\n	);\n	var callback = function() {\n		SWFM.Event.fire('widget.browser.init', 'setting_changed');\n	}\n	SWFM.Setting.load(callback);		//ToDo only load new settings\n}());\n\n",
+			"file": "swfm/swfm_alt/widgets/browser/widget.js",
+			"file_size": 31543,
+			"file_write_time": 1326721789000000,
+			"settings":
+			{
+				"buffer_size": 29732,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm-extjs4/app/model/File.js",
+			"settings":
+			{
+				"buffer_size": 1627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "swfm/swfm_alt/classes/setting.js",
+			"settings":
+			{
+				"buffer_size": 7279,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -112,23 +171,34 @@
 	},
 	"file_history":
 	[
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/I18n.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm/widgets/browser/widget.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/widgets/browser/widget.js",
+		"/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
+		"/home/kabum/.config/sublime-text-2/Packages/User/JavaScript.sublime-settings",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Event.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Icon.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Menu.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Path.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Url.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Config.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/url.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/menu.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/i18n.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/event.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/config.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/path.js",
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm_alt/classes/icons.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/IconView.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/controller/Browser.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm/widgets/browser/widget.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/Application.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Tab.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/GridView.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/ext-all-dev.js",
-		"/home/kabum/.config/sublime-text-2/Packages/User/Base File.sublime-settings",
 		"/home/kabum/.config/sublime-text-2/Packages/Default/Base File.sublime-settings",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Config.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Menu.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/view/browser/Browser.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/menu.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Event.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/event.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Path.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/I18n.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/plugins/setting/plugin.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm/classes/swfm-main.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/model/File.js",
@@ -164,8 +234,6 @@
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/src/form/field/Base.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/ext-all.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/extjs/ext.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Icon.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4/app/lib/Url.js",
 		"/home/kabum/Projekte/swfm-reste/classes/path.js",
 		"/home/kabum/Downloads/faenza_and_faience_humble_indie_bundle_pack_by_tiheum-d4g9p4g/README",
 		"/home/kabum/PKGBUILD",
@@ -230,16 +298,7 @@
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/model/File.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/browser/Tab.js",
 		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/store/Files.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/model/Icon.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/data/icons.json",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/controller/lib/Path.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/controller/lib/Icon.js",
-		"/etc/lighttpd/lighttpd.conf",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/Viewport.js",
-		"/home/kabum/Projekte/www/Pandora/app/controller/Station.js",
-		"/home/kabum/Projekte/www/Pandora/app/view/StationsList.js",
-		"/home/kabum/Projekte/www/Pandora/app/controller/Song.js",
-		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/view/Browser.js"
+		"/home/kabum/Projekte/SmartWFM/swfm/swfm-extjs4-2/app/model/Icon.js"
 	],
 	"find":
 	{
@@ -254,9 +313,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"date_format",
+			"SWFM.I18N.",
+			"name_dis",
+			"name_du",
 			"glob",
 			"index_selected",
 			"index_in",
@@ -366,6 +429,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"DATE_FORMAT",
+			"SmartWFM.lib.I18n.",
 			"indexSelected",
 			"indexIn",
 			"menuItem",
@@ -405,8 +470,204 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "swfm/swfm-extjs4/app/controller/Browser.js",
+					"settings":
+					{
+						"buffer_size": 5061,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1402,
+								1402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 208.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "swfm/swfm-extjs4/app/view/browser/IconView.js",
+					"settings":
+					{
+						"buffer_size": 1081,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								721,
+								619
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "swfm/swfm-extjs4/app/view/browser/Tab.js",
+					"settings":
+					{
+						"buffer_size": 965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								956,
+								956
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 14.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "swfm/swfm-extjs4/app/view/browser/GridView.js",
+					"settings":
+					{
+						"buffer_size": 1735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								647,
+								647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 96.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "swfm/swfm_alt/widgets/browser/widget.js",
+					"settings":
+					{
+						"buffer_size": 29732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7881,
+								7881
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1551.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "swfm/swfm-extjs4/app/model/File.js",
+					"settings":
+					{
+						"buffer_size": 1627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								460
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "swfm/swfm_alt/classes/setting.js",
+					"settings":
+					{
+						"buffer_size": 7279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1584.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -427,11 +688,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
